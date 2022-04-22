@@ -12,7 +12,7 @@ import com.example.clientesqlite.db.DbClientes;
 
 public class NuevoActivity extends AppCompatActivity {
 
-    EditText txtNombre, txtTelefono, txtEmail;
+    EditText txtNombre, txtRuc, txtRepresentante, txtDireccion, txtTelefono,txtProductos, txtCredito;
     Button btnGuarda;
 
     @Override
@@ -21,15 +21,20 @@ public class NuevoActivity extends AppCompatActivity {
         setContentView(R.layout.activity_nuevo);
 
         txtNombre = findViewById(R.id.txtNombre);
+        txtRuc = findViewById(R.id.txtRuc);
+        txtRepresentante = findViewById(R.id.txtRepresentante);
+        txtDireccion = findViewById(R.id.txtDireccion);
         txtTelefono = findViewById(R.id.txtTelefono);
-        txtEmail = findViewById(R.id.txtEmail);
+        txtProductos = findViewById(R.id.txtProductos);
+        txtCredito = findViewById(R.id.txtCredito);
         btnGuarda = findViewById(R.id.btnGuarda);
 
         btnGuarda.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 DbClientes dbClientes = new DbClientes(NuevoActivity.this);
-                long id = dbClientes.insertarCliente(txtNombre.getText().toString(), txtTelefono.getText().toString(), txtEmail.getText().toString());
+                long id = dbClientes.insertarCliente(txtNombre.getText().toString(), txtRuc.getText().toString(), txtRepresentante.getText().toString(),txtDireccion.getText().toString(),
+                        txtTelefono.getText().toString(), txtProductos.getText().toString(),txtCredito.getText().toString());
 
                 if(id>0){
                     Toast.makeText(NuevoActivity.this, "REGISTRO GUARDADO", Toast.LENGTH_SHORT).show();
@@ -44,7 +49,12 @@ public class NuevoActivity extends AppCompatActivity {
 
     private  void limpiar(){
         txtNombre.setText("");
+        txtRuc.setText("");
+        txtRepresentante.setText("");
+        txtDireccion.setText("");
         txtTelefono.setText("");
-        txtEmail.setText("");
+        txtProductos.setText("");
+        txtCredito.setText("");
+
     }
 }

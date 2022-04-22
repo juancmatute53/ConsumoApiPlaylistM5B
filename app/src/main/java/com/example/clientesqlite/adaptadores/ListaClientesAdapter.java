@@ -34,8 +34,12 @@ public class ListaClientesAdapter extends RecyclerView.Adapter<ListaClientesAdap
     @Override
     public void onBindViewHolder(@NonNull ClienteViewHolder holder, int position) {
         holder.viewNombre.setText(listaClientes.get(position).getNombre());
+        holder.viewRuc.setText(listaClientes.get(position).getRuc());
+        holder.viewRepresentante.setText(listaClientes.get(position).getRepresentante());
+        holder.viewDireccion.setText(listaClientes.get(position).getDireccion());
         holder.viewTelefono.setText(listaClientes.get(position).getTelefono());
-        holder.viewEmail.setText(listaClientes.get(position).getEmail());
+        holder.viewProductos.setText(listaClientes.get(position).getProductos());
+        holder.viewCredito.setText(listaClientes.get(position).getCredito());
     }
 
     @Override
@@ -45,12 +49,16 @@ public class ListaClientesAdapter extends RecyclerView.Adapter<ListaClientesAdap
 
     public class ClienteViewHolder extends RecyclerView.ViewHolder {
 
-        TextView viewNombre, viewTelefono, viewEmail;
+        TextView viewNombre, viewRuc, viewRepresentante, viewDireccion, viewTelefono, viewProductos, viewCredito;
         public ClienteViewHolder(@NonNull View itemView) {
             super(itemView);
             viewNombre = itemView.findViewById(R.id.viewNombre);
+            viewRuc = itemView.findViewById(R.id.viewRuc);
+            viewRepresentante = itemView.findViewById(R.id.viewRepresentante);
+            viewDireccion = itemView.findViewById(R.id.viewDireccion);
             viewTelefono= itemView.findViewById(R.id.viewTelefono);
-            viewEmail = itemView.findViewById(R.id.viewEmail);
+            viewProductos = itemView.findViewById(R.id.viewProductos);
+            viewCredito = itemView.findViewById(R.id.viewCredito);
 
             itemView.setOnClickListener(new View.OnClickListener() {
                 @Override

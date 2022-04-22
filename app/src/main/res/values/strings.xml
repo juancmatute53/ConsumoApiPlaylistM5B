@@ -1,8 +1,14 @@
 <resources>
-    <string name="app_name">ClienteSQLite</string>
-    <string name="hint_nombre">Nombre:</string>
+    <string name="app_name">Proveedores</string>
+    <string name="hint_nombre">Nombre Comercial:</string>
+    <string name="hint_ruc">Ruc:</string>
+    <string name="hint_representante">Representante Legal:</string>
+    <string name="hint_direccion">Direccion:</string>
     <string name="hint_telefono">Telefono:</string>
+    <string name="hint_productos">Productos:</string>
+    <string name="hint_credito">Credito:</string>
     <string name="hint_email">Email:</string>
     <string name="btn_guarda">Guardar</string>
-    <string name="menu_nuevo">Nuevo registro</string>
+    <string name="menu_nuevo">Nuevo Proveedor</string>
+
 </resources>

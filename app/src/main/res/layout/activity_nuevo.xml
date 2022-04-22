@@ -44,6 +44,45 @@
                     android:labelFor="@+id/viewNombre"
                     android:inputType="textPersonName"
                     android:textSize="24sp" />
+                <TextView
+                    android:id="@+id/viewRuc"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="@string/hint_ruc" />
+                <EditText
+                    android:id="@+id/txtRuc"
+                    android:layout_width="370dp"
+                    android:layout_height="wrap_content"
+                    android:ems="10"
+                    android:labelFor="@+id/viewRuc"
+                    android:inputType="phone"
+                    android:textSize="24sp" />
+                <TextView
+                    android:id="@+id/viewRepresentante"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="@string/hint_representante" />
+                <EditText
+                    android:id="@+id/txtRepresentante"
+                    android:layout_width="370dp"
+                    android:layout_height="wrap_content"
+                    android:ems="10"
+                    android:labelFor="@+id/viewRepresentante"
+                    android:inputType="text"
+                    android:textSize="24sp" />
+                <TextView
+                    android:id="@+id/viewDireccion"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="@string/hint_direccion" />
+                <EditText
+                    android:id="@+id/txtDireccion"
+                    android:layout_width="370dp"
+                    android:layout_height="wrap_content"
+                    android:ems="10"
+                    android:labelFor="@+id/viewDireccion"
+                    android:inputType="text"
+                    android:textSize="24sp" />
 
                 <TextView
                     android:id="@+id/viewTelefono"
@@ -58,19 +97,32 @@
                     android:labelFor="@+id/viewTelefono"
                     android:inputType="phone"
                     android:textSize="24sp" />
-
                 <TextView
-                    android:id="@+id/viewEmail"
+                    android:id="@+id/viewProductos"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:text="@string/hint_email" />
+                    android:text="@string/hint_productos" />
                 <EditText
-                    android:id="@+id/txtEmail"
+                    android:id="@+id/txtProductos"
                     android:layout_width="370dp"
                     android:layout_height="wrap_content"
                     android:ems="10"
-                    android:labelFor="@+id/viewEmail"
-                    android:inputType="textEmailAddress"
+                    android:labelFor="@+id/viewProductos"
+                    android:inputType="text"
+                    android:textSize="24sp" />
+
+                <TextView
+                    android:id="@+id/viewCredito"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="@string/hint_credito" />
+                <EditText
+                    android:id="@+id/txtCredito"
+                    android:layout_width="370dp"
+                    android:layout_height="wrap_content"
+                    android:ems="10"
+                    android:labelFor="@+id/viewCredito"
+                    android:inputType="text"
                     android:textSize="24sp" />
 
                 <Button

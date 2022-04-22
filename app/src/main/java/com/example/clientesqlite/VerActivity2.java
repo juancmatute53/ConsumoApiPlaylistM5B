@@ -17,7 +17,7 @@ import com.google.android.material.floatingactionbutton.FloatingActionButton;
 
 public class VerActivity2 extends AppCompatActivity {
 
-    EditText txtNombre, txtTelefono, txtEmail;
+    EditText txtNombre, txtRuc, txtRepresentante, txtDireccion,  txtTelefono, txtProductos, txtCredito;
     Button btnGuarda,btnEditar,btnEliminar;
     //FloatingActionButton fabEditar, fabEliminar;
 
@@ -30,8 +30,12 @@ public class VerActivity2 extends AppCompatActivity {
         setContentView(R.layout.activity_ver2);
 
         txtNombre = findViewById(R.id.txtNombre);
+        txtRuc = findViewById(R.id.txtRuc);
+        txtRepresentante = findViewById(R.id.txtRepresentante);
+        txtDireccion = findViewById(R.id.txtDireccion);
         txtTelefono = findViewById(R.id.txtTelefono);
-        txtEmail = findViewById(R.id.txtEmail);
+        txtProductos = findViewById(R.id.txtProductos);
+        txtCredito = findViewById(R.id.txtCredito);
         btnGuarda = findViewById(R.id.btnGuarda);
         btnEditar = findViewById(R.id.btnEditar);
         btnEliminar = findViewById(R.id.btnEliminar);
@@ -53,12 +57,21 @@ public class VerActivity2 extends AppCompatActivity {
 
         if(cliente !=null){
             txtNombre.setText(cliente.getNombre());
+            txtRuc.setText(cliente.getRuc());
+            txtRepresentante.setText(cliente.getRepresentante());
+            txtDireccion.setText(cliente.getDireccion());
             txtTelefono.setText(cliente.getTelefono());
-            txtEmail.setText(cliente.getEmail());
+            txtProductos.setText(cliente.getProductos());
+            txtCredito.setText(cliente.getCredito());
             btnGuarda.setVisibility(View.INVISIBLE);
+
             txtNombre.setInputType(InputType.TYPE_NULL);
+            txtRuc.setInputType(InputType.TYPE_NULL);
+            txtRepresentante.setInputType(InputType.TYPE_NULL);
+            txtDireccion.setInputType(InputType.TYPE_NULL);
             txtTelefono.setInputType(InputType.TYPE_NULL);
-            txtEmail.setInputType(InputType.TYPE_NULL);
+            txtProductos.setInputType(InputType.TYPE_NULL);
+            txtCredito.setInputType(InputType.TYPE_NULL);
         }
         btnEditar.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -73,7 +86,7 @@ public class VerActivity2 extends AppCompatActivity {
             @Override
             public void onClick(View view) {
                 AlertDialog.Builder builder = new AlertDialog.Builder(VerActivity2.this);
-                builder.setMessage("¿Esta seguro de eliminar este Cliente?")
+                builder.setMessage("¿Esta seguro de eliminar este Proveedor?")
                         .setPositiveButton("SI", new DialogInterface.OnClickListener() {
                             @Override
                             public void onClick(DialogInterface dialogInterface, int i) {

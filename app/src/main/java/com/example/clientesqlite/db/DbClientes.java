@@ -20,7 +20,7 @@ public class DbClientes extends DbHelper {
         this.context = context;
     }
 
-    public long insertarCliente(String nombre, String telefono, String email){
+    public long insertarCliente(String nombre, String ruc, String representante, String direccion, String telefono, String productos, String credito){
 
         long id = 0;
 
@@ -30,8 +30,12 @@ public class DbClientes extends DbHelper {
 
             ContentValues values = new ContentValues();
             values.put("nombre",nombre);
+            values.put("ruc",ruc);
+            values.put("representante",representante);
+            values.put("direccion",direccion);
             values.put("telefono",telefono);
-            values.put("email",email);
+            values.put("productos",productos);
+            values.put("credito",credito);
 
             id = db.insert(TABLE_CONTACTOS, null, values);
         }catch (Exception ex){
@@ -56,8 +60,12 @@ public class DbClientes extends DbHelper {
                 cliente = new Clientes();
                 cliente.setId(cursorClientes.getInt(0));
                 cliente.setNombre(cursorClientes.getString(1));
-                cliente.setTelefono(cursorClientes.getString(2));
-                cliente.setEmail(cursorClientes.getString(3));
+                cliente.setRuc(cursorClientes.getString(2));
+                cliente.setRepresentante(cursorClientes.getString(3));
+                cliente.setDireccion(cursorClientes.getString(4));
+                cliente.setTelefono(cursorClientes.getString(5));
+                cliente.setProductos(cursorClientes.getString(6));
+                cliente.setCredito(cursorClientes.getString(7));
                 listaClientes.add(cliente);
             }while(cursorClientes.moveToNext());
 
@@ -80,10 +88,15 @@ public class DbClientes extends DbHelper {
         if(cursorClientes.moveToFirst()){
 
                 cliente = new Clientes();
-                cliente.setId(cursorClientes.getInt(0));
-                cliente.setNombre(cursorClientes.getString(1));
-                cliente.setTelefono(cursorClientes.getString(2));
-                cliente.setEmail(cursorClientes.getString(3));
+
+            cliente.setId(cursorClientes.getInt(0));
+            cliente.setNombre(cursorClientes.getString(1));
+            cliente.setRuc(cursorClientes.getString(2));
+            cliente.setRepresentante(cursorClientes.getString(3));
+            cliente.setDireccion(cursorClientes.getString(4));
+            cliente.setTelefono(cursorClientes.getString(5));
+            cliente.setProductos(cursorClientes.getString(6));
+            cliente.setCredito(cursorClientes.getString(7));
 
         }
         cursorClientes.close();
@@ -91,7 +104,7 @@ public class DbClientes extends DbHelper {
     }
 
 
-    public boolean editarCliente(int id,String nombre, String telefono, String email){
+    public boolean editarCliente(int id,String nombre,String ruc, String representante, String direccion, String telefono, String productos, String credito){
 
         boolean correcto = false;
 
@@ -99,7 +112,7 @@ public class DbClientes extends DbHelper {
         SQLiteDatabase db = dbHelper.getWritableDatabase();
 
         try {
-            db.execSQL("UPDATE " + TABLE_CONTACTOS + " SET nombre = '" + nombre + "', telefono = '" + telefono + "', email = '" + email + "' WHERE id = '" +id+ "'");
+            db.execSQL("UPDATE " + TABLE_CONTACTOS + " SET nombre = '" + nombre + "', ruc = '" + ruc + "', representante = '" + representante + "', direccion = '" + direccion + "',telefono = '" + telefono + "',productos = '" + productos + "', credito = '" + credito + "' WHERE id = '" +id+ "'");
             correcto = true;
         }catch (Exception ex){
             ex.toString();
