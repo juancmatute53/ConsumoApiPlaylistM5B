@@ -1,3 +1,0 @@
-Para crear un nuevo provedor se desplegara el menu que tiene el aplicativo y nos permitira crear un proveedor.
-
-Para editar o eliminar un Proveedor le daremos click encima del Proeedor creado y podremos eliminarlo o modificarlo.
